@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./style.css";
 import Cards from "./cards/Cards";
-import StartOver from './start_over/StartOver';
-
+import StartOver from "./start_over/StartOver";
+import { createArrayOfCards, newShuffle } from "../utils/funcHnadlers";
 
 function App() {
-  let cards=[];
-  for(let i = 1; i < 25; i++){//[1,...,24] number of cards
-    cards.push(i);
-  }
+  let cards = useRef(newShuffle(createArrayOfCards(24)));
+  console.log(cards);
+
+  const [imgID, setImgID] = React.useState(null);
+
   return (
     <div className="container">
-
-    <h1  className='header'>
-        Memory Game
-    </h1>
-    <StartOver />
-    <Cards cards={cards}/>
-    
+      <h1 className="header">Memory Game</h1>
+      <StartOver />
+      <Cards cards={cards.current} imgID={imgID} setImgID={setImgID} />
     </div>
   );
 }

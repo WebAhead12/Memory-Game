@@ -1,12 +1,19 @@
 import React from "react";
 import "./style.css";
-// import image from '../images/0.jpg';
 
 function Card(props) {
-  // const [imgUrl, setImgUrl] = React.useState('0.jpg')
   return (
     <div className="card">
-      <img className="cardCover" src={"/images/0.jpg"} alt="cover" />
+      <img
+        onClick={() => props.setImgID(props.index)}
+        className="cardCover"
+        src={
+          props.imgID === props.index
+            ? "/images/" + props.img + ".jpg"
+            : "/images/0.jpg"
+        }
+        alt="cover"
+      />
     </div>
   );
 }
