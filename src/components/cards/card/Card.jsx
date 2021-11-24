@@ -7,18 +7,17 @@ function Card(props) {
       <img
         onClick={() => {
           if (props.answers.includes(props.img)) return;
-          if (props.selectedImg === props.img) {
-            const newArr = props.answers;
-            newArr.push(props.img);
-            props.setAnswers(newArr);
+
+          if (props.selectedImg === props.img && props.index !== props.currentLocation) {
+            props.setAnswers(props.answers.concat(props.img));
           }
 
-          props.setImgID(props.index);
+          props.setCurrentLocation(props.index);
           props.setSelectedImg(props.img);
         }}
         className="cardCover"
         src={
-          props.imgID === props.index || props.answers.includes(props.img)
+          props.currentLocation === props.index || props.answers.includes(props.img)
             ? "/images/" + props.img + ".jpg"
             : "/images/0.jpg"
         }

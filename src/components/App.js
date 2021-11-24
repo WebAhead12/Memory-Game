@@ -2,15 +2,15 @@ import React, { useEffect, useRef } from "react";
 import "./style.css";
 import Cards from "./cards/Cards";
 import StartOver from "./start_over/StartOver";
-import { createArrayOfCards, newShuffle } from "../utils/funcHnadlers";
+import { createArrayOfCards, newShuffle } from "../utils/funcHandlers";
 
 function App() {
   let cards = useRef(newShuffle(createArrayOfCards(24)));
   console.log(cards);
 
-  const [imgID, setImgID] = React.useState(null);
+  const [currentLocation, setCurrentLocation] = React.useState(null);
   const [selectedImg, setSelectedImg] = React.useState(null);
-  const [answers, setAnswers] = React.useState([]);
+  const [answers, setAnswers] = React.useState([]); // [7]
 
   return (
     <div className="container">
@@ -18,8 +18,8 @@ function App() {
       <StartOver />
       <Cards
         cards={cards.current}
-        imgID={imgID}
-        setImgID={setImgID}
+        currentLocation={currentLocation}
+        setCurrentLocation={setCurrentLocation}
         selectedImg={selectedImg}
         setSelectedImg={setSelectedImg}
         answers={answers}

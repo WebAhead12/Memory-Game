@@ -17,9 +17,9 @@ function Cards(props) {
             <Card
               key={idx}
               img={props.cards[idx]} //1-12
-              index={idx} //1-24
-              imgID={props.imgID}
-              setImgID={props.setImgID}
+              index={idx} //location of the card on the page 0 - 23
+              currentLocation={props.currentLocation}
+              setCurrentLocation={props.setCurrentLocation}
               selectedImg={props.selectedImg}
               setSelectedImg={props.setSelectedImg}
               setAnswers={props.setAnswers}
@@ -35,8 +35,8 @@ function Cards(props) {
               key={idx + 6}
               img={props.cards[idx + 6]}
               index={idx + 6}
-              imgID={props.imgID}
-              setImgID={props.setImgID}
+              currentLocation={props.currentLocation}
+              setCurrentLocation={props.setCurrentLocation}
               selectedImg={props.selectedImg}
               setSelectedImg={props.setSelectedImg}
               setAnswers={props.setAnswers}
@@ -52,8 +52,8 @@ function Cards(props) {
               key={idx + 12}
               img={props.cards[idx + 12]}
               index={idx + 12}
-              imgID={props.imgID}
-              setImgID={props.setImgID}
+              currentLocation={props.currentLocation}
+              setCurrentLocation={props.setCurrentLocation}
               selectedImg={props.selectedImg}
               setSelectedImg={props.setSelectedImg}
               setAnswers={props.setAnswers}
@@ -69,8 +69,8 @@ function Cards(props) {
               key={idx + 18}
               img={props.cards[idx + 18]}
               index={idx + 18}
-              imgID={props.imgID}
-              setImgID={props.setImgID}
+              currentLocation={props.currentLocation}
+              setCurrentLocation={props.setCurrentLocation}
               selectedImg={props.selectedImg}
               setSelectedImg={props.setSelectedImg}
               setAnswers={props.setAnswers}
