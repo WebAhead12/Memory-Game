@@ -9,12 +9,22 @@ function App() {
   console.log(cards);
 
   const [imgID, setImgID] = React.useState(null);
+  const [selectedImg, setSelectedImg] = React.useState(null);
+  const [answers, setAnswers] = React.useState([]);
 
   return (
     <div className="container">
       <h1 className="header">Memory Game</h1>
       <StartOver />
-      <Cards cards={cards.current} imgID={imgID} setImgID={setImgID} />
+      <Cards
+        cards={cards.current}
+        imgID={imgID}
+        setImgID={setImgID}
+        selectedImg={selectedImg}
+        setSelectedImg={setSelectedImg}
+        answers={answers}
+        setAnswers={setAnswers}
+      />
     </div>
   );
 }
