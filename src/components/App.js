@@ -5,6 +5,10 @@ import StartOver from './start_over/StartOver';
 
 
 function App() {
+  let cards=[];
+  for(let i = 1; i < 25; i++){//[1,...,24] number of cards
+    cards.push(i);
+  }
   return (
     <div className="container">
 
@@ -12,7 +16,7 @@ function App() {
         Memory Game
     </h1>
     <StartOver />
-    <Cards />
+    <Cards cards={cards}/>
     
     </div>
   );
