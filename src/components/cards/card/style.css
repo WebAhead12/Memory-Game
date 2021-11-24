@@ -1,6 +1,11 @@
 .card {
-  background-color: brown;
+  /* background-color: brown; */
   height: 200px;
   width: 150px;
-  margin: 3px;
+  margin: 10px;
+  background-color: #f4a06f;
+  opacity: 0.9;
+  background-image: radial-gradient(rgb(0, 0, 0) 1.6px, #fdd0b7 1.6px);
+  background-size: 32px 32px;
+  border-radius: 10px;
 }
