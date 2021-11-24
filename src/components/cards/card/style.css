@@ -8,4 +8,5 @@
   background-image: radial-gradient(rgb(0, 0, 0) 1.6px, #fdd0b7 1.6px);
   background-size: 1.8vw 1.9vw;
   border-radius: 10px;
+  box-shadow: 1px 1px;
 }
