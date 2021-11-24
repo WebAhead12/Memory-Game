@@ -1,12 +1,14 @@
-.cardsContainer{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 70%;
-
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 70%;
 }
 
-.row1, .row2, .row3, .row4{
-    display: flex;
-    flex-direction: row;
+.row1,
+.row2,
+.row3,
+.row4 {
+  display: flex;
+  flex-direction: row;
 }
