@@ -37,27 +37,3 @@ function Cards(props) {
 }
 
 export default Cards;
-
-// {column.map((cardsHolder, index) => {
-//   return (
-//     <div key={index} className={"row" + (index + 1).toString()}>
-//       {row.map((cards, idx) => {
-//         return (
-//           <Card
-//             key={props.cards[idx + index * 6]}
-//             imgTag={props.cards[idx + index * 6]} //0-23
-//             imgName={props.cards[idx + index * 6] % 12} //0-11
-//             flag={props.flag}
-//             setFlag={props.setFlag}
-//             counter={props.counter}
-//             setCounter={props.setCounter}
-//             clicked={props.clicked}
-//             setClicked={props.setClicked}
-//             isActive={props.isActive}
-//             setActive={props.setActive}
-//           />
-//         );
-//       })}
-//     </div>
-//   );
-// })}
