@@ -1,5 +1,4 @@
 .card {
-  /* background-color: brown; */
   height: 220px;
   width: 190px;
   margin: 1%;
@@ -16,5 +15,5 @@
 }
 
 .isClicked {
-  transform: rotateY(180);
+  transform: rotateY(180deg);
 }
