@@ -11,6 +11,7 @@ function Card(props) {
       const clickedArr = props.clicked;
       clickedArr.push(props.imgTag);
       props.setClicked(clickedArr);
+      props.setActive(!props.isActive);
 
       if (props.counter % 2) {
         //counter is odd => two images have been clicked
@@ -20,14 +21,17 @@ function Card(props) {
           newFlag.push(props.clicked[1]);
           props.setFlag(newFlag);
           props.setClicked([]);
+          props.setActive(!props.isActive);
         } else {
           setTimeout(() => {
             props.setClicked([]);
-          }, 1200);
+            props.setActive(!props.isActive);
+          }, 400);
         }
       }
     }
   };
+
   return (
     <div className="card">
       <img

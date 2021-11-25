@@ -10,11 +10,21 @@ function App() {
   const [counter, setCounter] = useState(0);
   const [clicked, setClicked] = useState([]);
   const [flag, setFlag] = useState([]);
+  const [isActive, setActive] = useState(false);
+  const [restart, setRestart] = useState(false);
+
+  React.useEffect(() => {
+    cards.current = newShuffle(createArrayOfCards(24));
+    setActive(false);
+    setFlag([]);
+    setClicked([]);
+    setCounter(0);
+  }, [restart]);
 
   return (
     <div className="container">
       <h1 className="header">Memory Game</h1>
-      <StartOver />
+      <StartOver restart={restart} setRestart={setRestart} />
       <Cards
         cards={cards.current}
         flag={flag}
@@ -23,6 +33,8 @@ function App() {
         setCounter={setCounter}
         clicked={clicked}
         setClicked={setClicked}
+        isActive={isActive}
+        setActive={setActive}
       />
     </div>
   );
