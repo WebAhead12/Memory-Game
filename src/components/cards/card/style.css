@@ -10,4 +10,11 @@
   width: 100%;
   border-radius: 10px;
   box-shadow: 1px 1px;
+  cursor: pointer;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.isClicked {
+  transform: rotateY(180);
 }

@@ -1,68 +1,35 @@
 import React from "react";
 import "./style.css";
 import Card from "./card/Card";
-import { createArrayOfCards } from "../../utils/funcHnadlers";
+import { createArrayOfCards } from "../../utils/funcHandlers";
 
 function Cards(props) {
-  let array = createArrayOfCards(6); //an array to set 6 cards in a row dynamiclly
+  let column = createArrayOfCards(4); //an array to set 4 rows horizontal divs dynamiclly in column.
+  let row = createArrayOfCards(6); //an array to set 6 cards in a row dynamiclly
 
-  // newShuffle(props.cards); //random permutations to change the place of the cards
-
-  // console.log(props.cards);
   return (
     <div className="cardsContainer">
-      <div className="row1">
-        {array.map((card, idx) => {
-          return (
-            <Card
-              key={idx}
-              img={props.cards[idx]} //1-12
-              index={idx} //1-24
-              imgID={props.imgID}
-              setImgID={props.setImgID}
-            />
-          );
-        })}
-      </div>
-      <div className="row2">
-        {array.map((card, idx) => {
-          return (
-            <Card
-              key={idx + 6}
-              img={props.cards[idx + 6]}
-              index={idx + 6}
-              imgID={props.imgID}
-              setImgID={props.setImgID}
-            />
-          );
-        })}
-      </div>
-      <div className="row3">
-        {array.map((card, idx) => {
-          return (
-            <Card
-              key={idx + 12}
-              img={props.cards[idx + 12]}
-              index={idx + 12}
-              imgID={props.imgID}
-              setImgID={props.setImgID}
-            />
-          );
-        })}
-      </div>
-      <div className="row4">
-        {array.map((card, idx) => {
-          return (
-            <Card
-              key={idx + 18}
-              img={props.cards[idx + 18]}
-              index={idx + 18}
-              imgID={props.imgID}
-              setImgID={props.setImgID}
-            />
-          );
-        })}
-      </div>
+      {column.map((cardsHolder, index) => {
+        return (
+          <div key={index} className={"row" + (index + 1).toString()}>
+            {row.map((cards, idx) => {
+              return (
+                <Card
+                  key={props.cards[idx + index * 6]}
+                  imgTag={props.cards[idx + index * 6]} //0-23
+                  imgName={props.cards[idx + index * 6] % 12} //0-11
+                  flag={props.flag}
+                  setFlag={props.setFlag}
+                  counter={props.counter}
+                  setCounter={props.setCounter}
+                  clicked={props.clicked}
+                  setClicked={props.setClicked}
+                />
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 }
