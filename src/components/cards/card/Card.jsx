@@ -3,7 +3,6 @@ import "./style.css";
 
 function Card(props) {
   const handleClick = () => {
-    console.log(props.counter);
     //first if checks if the clicked card is not chosen before
     if (
       !props.clicked.includes(props.imgTag) &&
